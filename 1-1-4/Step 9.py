@@ -3,30 +3,31 @@
 import turtle as trtl
 
 # modify with your two favorite colors
-color1 = "orange"
-color2 = "purple"
+color1 = "lime"
+color2 = "blue"
 
 wn = trtl.Screen()
-height = 50 # the radius of the shape
+height = 360 # the radius of the shape
 
 painter = trtl.Turtle()
 painter.speed(0)
 painter.color(color1)
 
 space = 1
-angle = 65 # experiment with the shape
-seg = int(360/angle)
+angle = 230
+# experiment with the shape
+seg = int(200/angle)
 
 while (painter.ycor() < height):
-  if (space % 2 == 0):
+  if (space % 5 == 0):
     painter.fillcolor(color1)
     painter.color(color1)
-  elif (space % 2 == 1):
+  else:
     painter.fillcolor(color2)
     painter.color(color2)
 
   painter.right(angle)
-  painter.forward(2*space + 10) # experiment
+  painter.forward(4*space + 10) # experiment
   painter.begin_fill()
   painter.circle(3)
   painter.end_fill()
