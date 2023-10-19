@@ -11,22 +11,30 @@ turtle_colors = ["red", "blue", "green", "orange", "purple", "gold"]
 
 for s in turtle_shapes:
   t = trtl.Turtle(shape=s)
+  d = t.color(color=d)
+  t.color(d)
+  turtle_colors.pop()
+  t.penup()
   my_turtles.append(t)
 
-#
+
+#Turtle Start Points
 
 startx = 0
 starty = 0
 
-#
+#Add movement to turtles after each iteration
+
 for t in my_turtles:
   t.goto(startx, starty)
+  t.pendown()
   t.right(45)
   t.forward(50)
 
-#
-  startx = startx + 50
-  starty = starty + 50
+#Change start position after each iteration
+
+  startx = t.xcor()
+  starty = t.ycor()
 
 wn = trtl.Screen()
 wn.mainloop()
