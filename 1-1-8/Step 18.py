@@ -39,13 +39,21 @@ for s in turtle_shapes:
 # TODO: move turtles across and down screen, stopping for collisions
 
 
-
+pixelSize = 20
+collisionColor = "grey"
+collisionShape = "circle"
 for step in range(50):
     for ht in horiz_turtles:
         for vt in vert_turtles:
             ht.forward(3)
             vt.forward(3)
-                
+
+        if(abs(ht.xcor() - vt.xcor()) < pixelSize):
+            if (abs(ht.ycor() - vt.ycor()) < pixelSize):
+                vt.hideturtle
+                ht.shape(collisionShape)
+                ht.fillcolor(collisionColor)
+
 
 wn = trtl.Screen()
 wn.mainloop()
